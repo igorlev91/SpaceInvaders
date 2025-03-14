@@ -8,14 +8,14 @@
 
 class Actor;
 
-class Scene
+class Scene : public std::enable_shared_from_this<Scene>
 {
 public:
 	typedef std::shared_ptr<Scene> SharedPtr;
 	typedef std::weak_ptr<Scene> WeakPtr;
 
 	typedef std::shared_ptr<Actor> ActorSharedPtr;
-	typedef std::vector<ActorSharedPtr>::const_iterator ActorIterator;
+	typedef std::vector<ActorSharedPtr>::iterator ActorIterator;
 
 	Scene(const Window::WeakPtr& InWindow);
 
@@ -41,6 +41,7 @@ public:
 protected:
 	void UpdateDelta();
 	void Destroyer();
+	void AddPendingActors();
 
 	virtual void Input(const float Delta);
 	virtual void Update(const float Delta);
@@ -48,13 +49,12 @@ protected:
 
 	Window::WeakPtr WindowPtr;
 	std::vector<ActorSharedPtr> Actors;
+	std::vector<ActorSharedPtr> PendingActors;
 
 	glm::mat4 Projection;
 
 	float CurrentTime;
 	float OldTime;
 	float Delta;
-
-	WeakPtr Self;
 };
 
