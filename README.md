@@ -2,7 +2,6 @@
 
 Remake of the 80s classic game **SPACE INVADERS** using **OpenGL** and **C++**.
 
-[Gameplay Video](https://youtu.be/TqB_-VCNxtg)
 
 # Table of contents
 - [Some screenshots](#shots)
@@ -38,7 +37,7 @@ This project is a modern remake of the iconic 80s game **SPACE INVADERS**,
 developed as a hands-on learning experience to explore **OpenGL** and fundamentals 
 game development techniques and concepts. 
 
-I have explored some optimization techniques because I didn’t want to stray from the original game, 
+I have explored some optimization techniques because I didnâ€™t want to stray from the original game, 
 which had to cope with the memory and processing limitations of the Atari 2600.
 
 **Limitation is the first step to sparking creativity and innovation**, I believe.
